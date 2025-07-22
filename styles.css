@@ -13,6 +13,28 @@ body {
     position: relative;
 }
 
+/* Icon styling */
+.feather {
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
+}
+
+.social-link .feather {
+    width: 1rem;
+    height: 1rem;
+}
+
+.location .feather {
+    width: 1rem;
+    height: 1rem;
+    vertical-align: middle;
+    margin-right: 0.3rem;
+    margin-top: -2px;
+}
+
 /* Simplified background - much better performance */
 body::before {
     content: '';
@@ -146,6 +168,27 @@ body::before {
     will-change: transform;
 }
 
+.profile-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.profile-fallback {
+    position: absolute;
+    z-index: 1;
+}
+
+/* Hide fallback when image loads successfully */
+.profile-photo:has(.profile-image) .profile-fallback {
+    display: none;
+}
+
 .profile-photo::before {
     content: '';
     position: absolute;
@@ -200,6 +243,11 @@ body::before {
     color: #515154;
     font-weight: 600;
     margin-bottom: 2rem;
+}
+
+.company-name {
+    color: #007AFF;
+    font-weight: 700;
 }
 
 .social-links {

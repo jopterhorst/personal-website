@@ -3,7 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alex Johnson - Portfolio</title>
+    <title>Jop ter Horst - Portfolio</title>
+    <!-- Apple SF Symbols Web Font -->
+    <link rel="stylesheet" href="https://developer.apple.com/fonts/SF-Symbols-4.ttf">
+    <!-- Feather Icons for clean, Apple-like icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -13,23 +17,27 @@
     <div class="container">
         <!-- Header Section -->
         <header class="header glass-card fade-in">
-            <div class="profile-photo">👤</div>
-            <h1 class="name">Alex Johnson</h1>
-            <p class="location">📍 San Francisco, CA</p>
-            <p class="job-title">Senior Product Designer</p>
+            <div class="profile-photo">
+                <img src="assets/profile-photo.jpg" alt="Jop ter Horst" class="profile-image">
+                <!-- Fallback icon if image doesn't load -->
+                <i data-feather="user" class="profile-fallback" style="width: 3rem; height: 3rem; color: white;"></i>
+            </div>
+            <h1 class="name">Jop ter Horst</h1>
+            <p class="location">
+                <i data-feather="map-pin" style="width: 1rem; height: 1rem; margin-right: 0.5rem;"></i>
+                The Netherlands
+            </p>
+            <p class="job-title">Technical Account Manager at <span class="company-name">Mendix</span></p>
             
             <div class="social-links">
-                <a href="#" class="social-link">
-                    <span>🔗</span> LinkedIn
+                <a href="https://www.linkedin.com/in/jopterhorst/" class="social-link">
+                    <i data-feather="linkedin"></i> LinkedIn
                 </a>
-                <a href="#" class="social-link">
-                    <span>🐙</span> GitHub
+                <a href="https://github.com/jopterhorst" class="social-link">
+                    <i data-feather="github"></i> GitHub
                 </a>
-                <a href="#" class="social-link">
-                    <span>🐦</span> Twitter
-                </a>
-                <a href="#" class="social-link">
-                    <span>📧</span> Email
+                <a href="mailto:jop@jopterhorst.nl" class="social-link">
+                    <i data-feather="mail"></i> Email
                 </a>
             </div>
         </header>
@@ -41,20 +49,20 @@
                 <h2 class="pillar-title">Experience</h2>
                 
                 <div class="experience-item">
-                    <div class="item-title">Senior Product Designer</div>
-                    <div class="item-subtitle">Apple Inc. • 2022 - Present</div>
+                    <div class="item-title">Technical Account Manager</div>
+                    <div class="item-subtitle">Mendix • 2024 - Present</div>
                     <div class="item-description">Leading design for iOS applications, focusing on user experience and interface design. Collaborated with cross-functional teams to deliver pixel-perfect designs.</div>
                 </div>
 
                 <div class="experience-item">
-                    <div class="item-title">Product Designer</div>
-                    <div class="item-subtitle">Meta • 2020 - 2022</div>
+                    <div class="item-title">Solutions Consultant</div>
+                    <div class="item-subtitle">CLEVR • 2020 - 2024</div>
                     <div class="item-description">Designed user interfaces for social media platforms, conducted user research, and created design systems that scaled across multiple products.</div>
                 </div>
 
                 <div class="experience-item">
-                    <div class="item-title">UX Designer</div>
-                    <div class="item-subtitle">Google • 2018 - 2020</div>
+                    <div class="item-title">Presales Consultant</div>
+                    <div class="item-subtitle">Thinkwise • 2018 - 2020</div>
                     <div class="item-description">Worked on Material Design components, created prototypes, and collaborated with engineering teams to implement design solutions.</div>
                 </div>
             </div>
@@ -152,5 +160,9 @@
     </div>
 
     <script src="script.js"></script>
+    <script>
+        // Initialize Feather icons
+        feather.replace();
+    </script>
 </body>
 </html>

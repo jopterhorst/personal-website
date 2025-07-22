@@ -22,6 +22,29 @@ function createParticles() {
     }
 }
 
+// Handle profile image loading
+function initProfileImage() {
+    const profileImage = document.querySelector('.profile-image');
+    const fallbackIcon = document.querySelector('.profile-fallback');
+    
+    if (profileImage) {
+        profileImage.addEventListener('load', function() {
+            // Image loaded successfully, hide fallback
+            if (fallbackIcon) {
+                fallbackIcon.style.display = 'none';
+            }
+        });
+        
+        profileImage.addEventListener('error', function() {
+            // Image failed to load, show fallback
+            profileImage.style.display = 'none';
+            if (fallbackIcon) {
+                fallbackIcon.style.display = 'block';
+            }
+        });
+    }
+}
+
 // Scroll animation observer
 function initScrollAnimations() {
     const observer = new IntersectionObserver((entries) => {
@@ -63,6 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
     createParticles();
     initScrollAnimations();
     animateSkillBars();
+    initProfileImage();
 
     // Trigger first animation
     setTimeout(() => {
