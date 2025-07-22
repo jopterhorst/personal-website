@@ -45,6 +45,46 @@ function initProfileImage() {
     }
 }
 
+// Theme toggle functionality
+function initThemeToggle() {
+    const themeToggle = document.getElementById('themeToggle');
+    const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    
+    // Get stored theme or use system preference
+    const currentTheme = localStorage.getItem('theme') || 
+                        (prefersDarkScheme.matches ? 'dark' : 'light');
+    
+    // Apply initial theme
+    document.documentElement.setAttribute('data-theme', currentTheme);
+    
+    // Theme toggle click handler
+    themeToggle.addEventListener('click', () => {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        
+        // Apply new theme with animation
+        document.documentElement.style.transition = 'all 0.3s ease';
+        document.documentElement.setAttribute('data-theme', newTheme);
+        
+        // Store preference
+        localStorage.setItem('theme', newTheme);
+        
+        // Remove transition after animation completes
+        setTimeout(() => {
+            document.documentElement.style.transition = '';
+        }, 300);
+    });
+    
+    // Listen for system theme changes
+    prefersDarkScheme.addEventListener('change', (e) => {
+        // Only auto-switch if user hasn't set a preference
+        if (!localStorage.getItem('theme')) {
+            const newTheme = e.matches ? 'dark' : 'light';
+            document.documentElement.setAttribute('data-theme', newTheme);
+        }
+    });
+}
+
 // Scroll animation observer
 function initScrollAnimations() {
     const observer = new IntersectionObserver((entries) => {
@@ -87,6 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initScrollAnimations();
     animateSkillBars();
     initProfileImage();
+    initThemeToggle();
 
     // Trigger first animation
     setTimeout(() => {
@@ -105,10 +146,10 @@ document.addEventListener('mousemove', (e) => {
         if (x >= 0 && x <= rect.width && y >= 0 && y <= rect.height) {
             const centerX = rect.width / 2;
             const centerY = rect.height / 2;
-            const rotateX = (y - centerY) / 25; // Less intense
-            const rotateY = (centerX - x) / 25; // Less intense
+            const rotateX = (y - centerY) / 100; // Much more subtle
+            const rotateY = (centerX - x) / 100; // Much more subtle
             
-            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(5px)`;
+            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(2px)`;
         } else {
             card.style.transform = '';
         }
