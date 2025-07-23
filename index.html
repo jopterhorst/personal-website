@@ -12,6 +12,13 @@
     <meta name="apple-mobile-web-app-title" content="Jop ter Horst">
     
     <title>Jop ter Horst - Portfolio</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="alternate icon" href="favicon.svg">
+    <link rel="mask-icon" href="favicon.svg" color="#007AFF">
+    <link rel="apple-touch-icon" href="apple-touch-icon.svg">
+    
     <!-- Apple SF Symbols Web Font -->
     <link rel="stylesheet" href="https://developer.apple.com/fonts/SF-Symbols-4.ttf">
     <!-- Feather Icons for clean, Apple-like icons -->
@@ -95,7 +102,7 @@
                     <div class="item-title">Mendix</div>
                     <div class="skill-level">
                         <div class="skill-bar">
-                            <div class="skill-progress" style="width: 85%"></div>
+                            <div class="skill-progress" style="width: 97%"></div>
                         </div>
                         <span class="item-description">Expert</span>
                     </div>
@@ -246,7 +253,7 @@
         
         <div class="footer-bottom">
             <div class="footer-copyright">
-                <p>© 2025 Designed by Jop in the Netherlands.</p>
+                <p>© <span id="current-year">2025</span> Designed by Jop in the Netherlands.</p>
             </div>
             <div class="footer-legal">
                 <span class="footer-version live-activity" id="current-status">
@@ -267,14 +274,20 @@
         // Initialize Feather icons
         feather.replace();
         
+        // Set current year automatically
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        
         // Update CET time and status
         function updateTimeAndStatus() {
             const now = new Date();
+            
+            // Get CET time with seconds for testing
             const cetTime = now.toLocaleTimeString('en-US', {
                 timeZone: 'Europe/Amsterdam',
                 hour12: false,
                 hour: '2-digit',
-                minute: '2-digit'
+                minute: '2-digit',
+                second: '2-digit'
             });
             
             // Get current hour in CET
@@ -287,8 +300,11 @@
             // Get current day (0 = Sunday, 1 = Monday, etc.)
             const cetDay = new Date(now.toLocaleString('en-US', {timeZone: 'Europe/Amsterdam'})).getDay();
             
-            // Update time
-            document.getElementById('cet-time').textContent = `${cetTime} CET`;
+            // Update time with seconds to see it's working
+            const timeElement = document.getElementById('cet-time');
+            if (timeElement) {
+                timeElement.textContent = `${cetTime} CET`;
+            }
             
             // Update status based on work hours (Mon-Fri, 9AM-6PM CET)
             let status, statusColor;
@@ -320,13 +336,23 @@
                 statusColor = "#8E8E93"; // Gray
             }
             
-            document.getElementById('status-text').textContent = status;
-            document.getElementById('status-dot').style.backgroundColor = statusColor;
+            const statusTextElement = document.getElementById('status-text');
+            const statusDotElement = document.getElementById('status-dot');
+            
+            if (statusTextElement) {
+                statusTextElement.textContent = status;
+            }
+            if (statusDotElement) {
+                statusDotElement.style.backgroundColor = statusColor;
+            }
+            
+            // Debug: Log to console to verify updates
+            console.log(`Time updated: ${cetTime} CET, Status: ${status}`);
         }
         
-        // Update immediately and then every minute
+        // Update immediately and then every second (for testing)
         updateTimeAndStatus();
-        setInterval(updateTimeAndStatus, 60000);
+        setInterval(updateTimeAndStatus, 1000);
     </script>
 </body>
 </html>
