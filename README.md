@@ -111,7 +111,7 @@ if (cetDay >= 1 && cetDay <= 5 && cetHour >= 9 && cetHour < 18) {
 
 ## 🔧 Built With Claude Sonnet 4
 
-This entire portfolio was developed through an iterative "vibe-coding" process using Claude Sonnet 3.5, featuring:
+This entire portfolio was developed through an iterative "vibe-coding" process using Claude Sonnet 4, featuring:
 - **Conversational Development**: Natural language requirements to production code
 - **Iterative Refinement**: Continuous improvements based on feedback
 - **Apple Design Expertise**: AI-guided implementation of Apple design patterns

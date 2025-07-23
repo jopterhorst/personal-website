@@ -46,6 +46,16 @@ function initProfileImage() {
 }
 
 // Theme toggle functionality
+function updateMobileThemeColor(theme) {
+    // Update iOS Safari status bar and address bar color
+    const themeColorMeta = document.querySelector('meta[name="theme-color"]');
+    if (themeColorMeta) {
+        const lightColor = '#c3cfe2'; // Light theme gradient end color
+        const darkColor = '#2d2d30';  // Dark theme gradient end color
+        themeColorMeta.setAttribute('content', theme === 'dark' ? darkColor : lightColor);
+    }
+}
+
 function initThemeToggle() {
     const themeToggle = document.getElementById('themeToggle');
     const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
@@ -56,6 +66,7 @@ function initThemeToggle() {
     
     // Apply initial theme
     document.documentElement.setAttribute('data-theme', currentTheme);
+    updateMobileThemeColor(currentTheme);
     
     // Theme toggle click handler
     themeToggle.addEventListener('click', () => {
@@ -65,6 +76,7 @@ function initThemeToggle() {
         // Apply new theme with animation
         document.documentElement.style.transition = 'all 0.3s ease';
         document.documentElement.setAttribute('data-theme', newTheme);
+        updateMobileThemeColor(newTheme);
         
         // Store preference
         localStorage.setItem('theme', newTheme);
@@ -81,6 +93,7 @@ function initThemeToggle() {
         if (!localStorage.getItem('theme')) {
             const newTheme = e.matches ? 'dark' : 'light';
             document.documentElement.setAttribute('data-theme', newTheme);
+            updateMobileThemeColor(newTheme);
         }
     });
 }
