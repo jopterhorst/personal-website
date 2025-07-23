@@ -121,20 +121,6 @@ function animateSkillBars() {
     skillBars.forEach(bar => observer.observe(bar));
 }
 
-// Initialize everything when page loads
-document.addEventListener('DOMContentLoaded', () => {
-    createParticles();
-    initScrollAnimations();
-    animateSkillBars();
-    initProfileImage();
-    initThemeToggle();
-
-    // Trigger first animation
-    setTimeout(() => {
-        document.querySelector('.header').classList.add('visible');
-    }, 100);
-});
-
 // Simplified mouse interaction - better performance
 document.addEventListener('mousemove', (e) => {
     const cards = document.querySelectorAll('.glass-card');
@@ -146,12 +132,26 @@ document.addEventListener('mousemove', (e) => {
         if (x >= 0 && x <= rect.width && y >= 0 && y <= rect.height) {
             const centerX = rect.width / 2;
             const centerY = rect.height / 2;
-            const rotateX = (y - centerY) / 100; // Much more subtle
-            const rotateY = (centerX - x) / 100; // Much more subtle
+            const rotateX = (y - centerY) / 200; // Much more subtle (was 100)
+            const rotateY = (centerX - x) / 200; // Much more subtle (was 100)
             
-            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(2px)`;
+            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(1px)`;
         } else {
             card.style.transform = '';
         }
     });
+});
+
+// Initialize everything when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    createParticles();
+    initProfileImage();
+    initThemeToggle();
+    initScrollAnimations();
+    animateSkillBars();
+
+    // Trigger first animation
+    setTimeout(() => {
+        document.querySelector('.header').classList.add('visible');
+    }, 100);
 });
