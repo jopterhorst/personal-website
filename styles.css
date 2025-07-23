@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 * {
     margin: 0;
     padding: 0;
@@ -666,11 +668,11 @@ body::before {
 
 /* Override mouse interaction for footer specifically */
 .footer:hover {
-    transform: translateY(-2px) !important;
+    transform: translateY(-2px);
 }
 
 .footer::before {
-    display: none !important;
+    display: none;
 }
 
 .footer-content {
@@ -767,19 +769,19 @@ body::before {
 }
 
 /* Live Activity Styling */
-.live-activity {
-    display: flex !important;
+.footer .live-activity {
+    display: flex;
     align-items: center;
     gap: 0.5rem;
-    padding: 0.4rem 0.8rem !important;
-    background: var(--bg-secondary) !important;
+    padding: 0.4rem 0.8rem;
+    background: var(--bg-secondary);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border: 1px solid var(--border-color) !important;
-    border-radius: 16px !important;
-    color: var(--text-primary) !important;
-    font-weight: 500 !important;
-    font-size: 0.8rem !important;
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    color: var(--text-primary);
+    font-weight: 500;
+    font-size: 0.8rem;
     box-shadow: 
         0 2px 8px var(--shadow-color),
         inset 0 1px 0 rgba(255, 255, 255, 0.1);
