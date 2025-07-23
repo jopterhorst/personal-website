@@ -109,7 +109,7 @@ if (cetDay >= 1 && cetDay <= 5 && cetHour >= 9 && cetHour < 18) {
 - **Lazy Loading**: Intersection observers for scroll-triggered animations
 - **Debounced Updates**: Time updates limited to once per minute
 
-## 🔧 Built With Claude Sonnet 3.5
+## 🔧 Built With Claude Sonnet 4
 
 This entire portfolio was developed through an iterative "vibe-coding" process using Claude Sonnet 3.5, featuring:
 - **Conversational Development**: Natural language requirements to production code
@@ -122,12 +122,5 @@ This entire portfolio was developed through an iterative "vibe-coding" process u
 
 MIT License - feel free to use this as inspiration for your own portfolio!
 
----
-
-*Last updated: July 2025 | Built with ❤️ and Claude Sonnet 3.5*
-- Minimal DOM manipulation
-- Optimized particle system
-
----
 
 Built with ❤️ using Apple's design principles
