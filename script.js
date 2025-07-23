@@ -60,9 +60,12 @@ function initThemeToggle() {
     const themeToggle = document.getElementById('themeToggle');
     const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
     
-    // Get stored theme or use system preference
-    const currentTheme = localStorage.getItem('theme') || 
-                        (prefersDarkScheme.matches ? 'dark' : 'light');
+    // Check if user has manually set a theme preference
+    const storedTheme = localStorage.getItem('theme');
+    const systemTheme = prefersDarkScheme.matches ? 'dark' : 'light';
+    
+    // Use stored theme if exists, otherwise use system preference
+    const currentTheme = storedTheme || systemTheme;
     
     // Apply initial theme
     document.documentElement.setAttribute('data-theme', currentTheme);
@@ -87,14 +90,16 @@ function initThemeToggle() {
         }, 300);
     });
     
-    // Listen for system theme changes
+    // Listen for system theme changes - always respect system changes
     prefersDarkScheme.addEventListener('change', (e) => {
-        // Only auto-switch if user hasn't set a preference
-        if (!localStorage.getItem('theme')) {
-            const newTheme = e.matches ? 'dark' : 'light';
-            document.documentElement.setAttribute('data-theme', newTheme);
-            updateMobileThemeColor(newTheme);
-        }
+        const newTheme = e.matches ? 'dark' : 'light';
+        
+        // Clear stored preference to respect system theme
+        localStorage.removeItem('theme');
+        
+        // Apply system theme
+        document.documentElement.setAttribute('data-theme', newTheme);
+        updateMobileThemeColor(newTheme);
     });
 }
 
