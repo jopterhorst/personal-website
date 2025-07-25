@@ -123,20 +123,25 @@ function initScrollAnimations() {
 
 // Animate skill bars on scroll
 function animateSkillBars() {
-    const skillBars = document.querySelectorAll('.skill-progress');
+    const skillFills = document.querySelectorAll('.skill-fill');
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                const width = entry.target.style.width;
-                entry.target.style.width = '0%';
+                const fill = entry.target;
+                const targetWidth = fill.dataset.width;
+                
+                // Start with 0 width
+                fill.style.width = '0%';
+                
+                // Animate to target width
                 setTimeout(() => {
-                    entry.target.style.width = width;
+                    fill.style.width = targetWidth;
                 }, 200);
             }
         });
     }, { threshold: 0.5 });
 
-    skillBars.forEach(bar => observer.observe(bar));
+    skillFills.forEach(fill => observer.observe(fill));
 }
 
 // Simplified mouse interaction - better performance
