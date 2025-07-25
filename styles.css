@@ -572,6 +572,27 @@ body::before {
     box-shadow: 0 4px 12px rgba(52, 199, 89, 0.3);
 }
 
+.skill-fill.learning {
+    background: linear-gradient(135deg, #FF9500 0%, #FF6B00 100%);
+    box-shadow: 0 4px 12px rgba(255, 149, 0, 0.3);
+    animation: learningPulse 3s ease-in-out infinite;
+}
+
+@keyframes learningPulse {
+    0% { 
+        width: 20%;
+        opacity: 0.8;
+    }
+    50% { 
+        width: 85%;
+        opacity: 1;
+    }
+    100% { 
+        width: 20%;
+        opacity: 0.8;
+    }
+}
+
 .skill-percentage-badge {
     position: absolute;
     top: 50%;

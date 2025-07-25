@@ -130,6 +130,11 @@ function animateSkillBars() {
                 const fill = entry.target;
                 const targetWidth = fill.dataset.width;
                 
+                // Skip animation for learning skills (they have their own CSS animation)
+                if (targetWidth === 'learning') {
+                    return;
+                }
+                
                 // Start with 0 width
                 fill.style.width = '0%';
                 
