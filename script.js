@@ -172,6 +172,9 @@ document.addEventListener('mousemove', (e) => {
 
 // Initialize everything when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
+    // Force scroll to top on page load
+    window.scrollTo(0, 0);
+    
     createParticles();
     initProfileImage();
     initThemeToggle();

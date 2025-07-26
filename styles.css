@@ -43,6 +43,15 @@ body {
     transition: background 0.3s ease, color 0.3s ease;
 }
 
+/* Ensure page always starts at top */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    scroll-behavior: auto;
+}
+
 /* Icon styling */
 .feather {
     stroke: currentColor;
@@ -247,7 +256,7 @@ body::before {
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 2rem;
+    padding: 0rem;
     position: relative;
     z-index: 1;
 }
@@ -255,7 +264,7 @@ body::before {
 /* Header Section */
 .header {
     text-align: center;
-    margin: 0 2rem 4rem 2rem;
+    margin: 2rem 2rem 4rem 2rem;
     padding: 3rem 2.5rem;
     display: flex;
     flex-direction: column;
@@ -713,7 +722,7 @@ body::before {
 
 @media (max-width: 768px) {
     .header {
-        margin: 0 1rem 2rem 1rem;
+        margin: 2rem 1rem 2rem 1rem;
         padding: 2rem 1.5rem;
     }
     
@@ -746,7 +755,7 @@ body::before {
     }
     
     .pillar {
-        padding: 2rem;
+        padding: 2rem 1rem;
         min-height: auto;
     }
 }
@@ -937,6 +946,13 @@ body::before {
     width: 14px;
     height: 14px;
     stroke: currentColor;
+}
+
+/* Monospace font for time display */
+#cet-time {
+    font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.025em;
 }
 
 /* Responsive Footer */
