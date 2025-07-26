@@ -226,7 +226,7 @@
                         <div class="skill-level">
                             <div class="skill-indicator">
                                 <div class="skill-fill learning" data-width="learning" style="width: 0%">
-                                    <div class="skill-percentage-badge">🚀</div>
+                                    <div class="skill-percentage-badge">〜</div>
                                 </div>
                             </div>
                             <div class="skill-info">
@@ -324,6 +324,16 @@
         // Set current year automatically
         document.getElementById('current-year').textContent = new Date().getFullYear();
         
+        // Helper function to convert hex to RGB
+        function hexToRgb(hex) {
+            const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+            return result ? {
+                r: parseInt(result[1], 16),
+                g: parseInt(result[2], 16),
+                b: parseInt(result[3], 16)
+            } : null;
+        }
+        
         // Update CET time and status
         function updateTimeAndStatus() {
             const now = new Date();
@@ -391,6 +401,12 @@
             }
             if (statusDotElement) {
                 statusDotElement.style.backgroundColor = statusColor;
+                
+                // Update shadow color to match the status color
+                const rgb = hexToRgb(statusColor);
+                if (rgb) {
+                    statusDotElement.style.boxShadow = `0 0 0 2px rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, 0.3)`;
+                }
             }
             
             // Debug: Log to console to verify updates

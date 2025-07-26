@@ -584,21 +584,24 @@ body::before {
 .skill-fill.learning {
     background: linear-gradient(135deg, #FF9500 0%, #FF6B00 100%);
     box-shadow: 0 4px 12px rgba(255, 149, 0, 0.3);
-    animation: learningPulse 3s ease-in-out infinite;
+    animation: learningPulse 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 }
 
 @keyframes learningPulse {
     0% { 
-        width: 20%;
-        opacity: 0.8;
+        width: 30%;
+        opacity: 0.7;
+        transform: scale(1);
     }
     50% { 
-        width: 85%;
+        width: 75%;
         opacity: 1;
+        transform: scale(1.01);
     }
     100% { 
-        width: 20%;
-        opacity: 0.8;
+        width: 30%;
+        opacity: 0.7;
+        transform: scale(1);
     }
 }
 
@@ -914,8 +917,8 @@ body::before {
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    background: #34C759;
-    box-shadow: 0 0 0 2px rgba(52, 199, 89, 0.2);
+    background: #34C759; /* Default fallback */
+    box-shadow: 0 0 0 2px rgba(52, 199, 89, 0.3);
     animation: statusPulse 2s ease-in-out infinite;
     flex-shrink: 0;
 }
