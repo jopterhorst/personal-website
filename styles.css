@@ -443,6 +443,9 @@ body::before {
     color: var(--text-secondary);
     margin: 0 auto 1.5rem;
     max-width: 600px;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    transition: color 0.3s ease;
 }
 
 #about .interests {
