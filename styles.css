@@ -305,10 +305,9 @@ body::before {
 .profile-fallback {
     position: absolute;
     z-index: 1;
-}
-
-/* Hide fallback when image loads successfully */
-.profile-photo:has(.profile-image) .profile-fallback {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     display: none;
 }
 
