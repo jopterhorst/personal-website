@@ -1,6 +1,6 @@
 # Jop ter Horst - Personal Website
 
-A sophisticated, Apple-inspired personal portfolio website featuring dynamic status tracking, live time displays, and comprehensive Apple Liquid Glass design system. This entire project was vibe-coded using **Claude Sonnet 4** through an iterative design process.
+A sophisticated, Apple-inspired personal portfolio website featuring dynamic status tracking, live time displays, and a comprehensive Apple Liquid Glass design system. This entire project was vibe-coded using **Claude Sonnet 4** through an iterative design process.
 
 ## ✨ Key Features
 
