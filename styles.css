@@ -411,6 +411,53 @@ body::before {
     border-color: var(--border-color);
 }
 
+
+/* About Section */
+#about {
+    margin: 0 2rem 4rem 2rem;
+    padding: 2.5rem;
+    text-align: center;
+}
+
+#about p {
+    color: var(--text-secondary);
+    margin: 0 auto 1.5rem;
+    max-width: 600px;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    transition: color 0.3s ease;
+}
+
+#about .interests {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    padding: 0;
+    margin: 0;
+}
+
+#about .interests li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(135deg, var(--bg-card) 0%, rgba(0, 122, 255, 0.1) 100%);
+    padding: 0.5rem 1rem;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    font-family: inherit;
+    color: var(--text-secondary);
+    box-shadow: 0 2px 6px var(--shadow-color);
+}
+
+#about .interests li i {
+    width: 1rem;
+    height: 1rem;
+    stroke-width: 2;
+}
+
 /* Main Content Layout */
 .main-content {
     margin: 0 2rem 4rem 2rem;
