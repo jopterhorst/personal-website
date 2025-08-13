@@ -46,6 +46,7 @@ body {
 /* Ensure page always starts at top */
 html {
     scroll-behavior: smooth;
+    background: var(--bg-primary);
 }
 
 body {
