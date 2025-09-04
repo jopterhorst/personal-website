@@ -50,8 +50,8 @@ function updateMobileThemeColor(theme) {
     // Update iOS Safari status bar and address bar color
     const themeColorMeta = document.querySelector('meta[name="theme-color"]');
     if (themeColorMeta) {
-        const lightColor = '#c3cfe2'; // Light theme gradient end color
-        const darkColor = '#2d2d30';  // Dark theme gradient end color
+        const lightColor = '#e5e5ea'; // Light theme gradient end color
+        const darkColor = '#2c2c2e';  // Updated softer dark theme color
         themeColorMeta.setAttribute('content', theme === 'dark' ? darkColor : lightColor);
     }
 }
@@ -170,6 +170,99 @@ document.addEventListener('mousemove', (e) => {
     });
 });
 
+// Apple-style haptic feedback simulation
+function addAppleInteractions() {
+    const interactiveElements = document.querySelectorAll('.social-link, .project-link, .theme-toggle');
+    
+    interactiveElements.forEach(element => {
+        element.addEventListener('mousedown', function() {
+            this.style.transform = 'scale(0.95)';
+            this.style.transition = 'transform 0.1s ease-out';
+        });
+        
+        element.addEventListener('mouseup', function() {
+            this.style.transform = '';
+            this.style.transition = 'transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+        });
+        
+        element.addEventListener('mouseleave', function() {
+            this.style.transform = '';
+        });
+    });
+}
+
+// Helper function for hex to RGB conversion
+function hexToRgb(hex) {
+    const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+    return result ? {
+        r: parseInt(result[1], 16),
+        g: parseInt(result[2], 16),
+        b: parseInt(result[3], 16)
+    } : null;
+}
+
+// Enhanced Apple-style status system
+function updateTimeAndStatus() {
+    const now = new Date();
+    
+    // More Apple-like time formatting
+    const cetTime = now.toLocaleTimeString('en-US', {
+        timeZone: 'Europe/Amsterdam',
+        hour12: false,
+        hour: '2-digit',
+        minute: '2-digit'
+    });
+    
+    const cetHour = parseInt(now.toLocaleTimeString('en-US', {
+        timeZone: 'Europe/Amsterdam',
+        hour12: false,
+        hour: '2-digit'
+    }));
+    
+    const cetDay = new Date(now.toLocaleString('en-US', {timeZone: 'Europe/Amsterdam'})).getDay();
+    
+    // Apple-style status messages
+    let status, statusColor;
+    if (cetDay >= 1 && cetDay <= 5 && cetHour >= 9 && cetHour < 18) {
+        status = "At Mendix";
+        statusColor = "#30D158"; // iOS green
+    } else if (cetHour >= 22 || cetHour < 6) {
+        status = "Do Not Disturb";
+        statusColor = "#8E8E93"; // iOS gray
+    } else if (cetDay === 6 || cetDay === 0) {
+        status = "Weekend Mode";
+        statusColor = "#BF5AF2"; // iOS purple
+    } else {
+        status = "Available";
+        statusColor = "#007AFF"; // iOS blue
+    }
+    
+    // Update with smoother animations
+    const statusElement = document.getElementById('status-text');
+    const dotElement = document.getElementById('status-dot');
+    const timeElement = document.getElementById('cet-time');
+    
+    if (statusElement && statusElement.textContent !== status) {
+        statusElement.style.opacity = '0.5';
+        setTimeout(() => {
+            statusElement.textContent = status;
+            statusElement.style.opacity = '1';
+        }, 150);
+    }
+    
+    if (dotElement) {
+        dotElement.style.backgroundColor = statusColor;
+        const rgb = hexToRgb(statusColor);
+        if (rgb) {
+            dotElement.style.boxShadow = `0 0 0 2px rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, 0.3)`;
+        }
+    }
+    
+    if (timeElement) {
+        timeElement.textContent = cetTime;
+    }
+}
+
 // Initialize everything when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
     // Force scroll to top on page load
@@ -180,6 +273,13 @@ document.addEventListener('DOMContentLoaded', function() {
     initThemeToggle();
     initScrollAnimations();
     animateSkillBars();
+    addAppleInteractions();
+    
+    // Initialize and update time/status if elements exist
+    if (document.getElementById('status-text') || document.getElementById('cet-time')) {
+        updateTimeAndStatus();
+        setInterval(updateTimeAndStatus, 60000); // Update every minute
+    }
 
     // Trigger first animation
     setTimeout(() => {
