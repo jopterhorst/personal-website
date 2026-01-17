@@ -596,42 +596,17 @@ body::before {
     flex-direction: column;
     gap: 1rem;
     position: relative;
-    padding-left: 1.5rem;
     z-index: 1;
-}
-
-.experience-group-roles::before {
-    content: '';
-    position: absolute;
-    top: 0.25rem;
-    bottom: 0.25rem;
-    left: 0.45rem;
-    width: 2px;
-    border-radius: 999px;
-    background: color-mix(in srgb, var(--text-tertiary), transparent 60%);
 }
 
 .experience-role {
     margin-bottom: 0;
-    padding: 0.5rem 0 0.75rem 1.25rem;
+    padding: 0.75rem 0;
     background: none;
     border: none;
     box-shadow: none;
     position: relative;
     transition: transform 0.3s ease;
-}
-
-.experience-role::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0.35rem;
-    width: 0.9rem;
-    height: 0.9rem;
-    border-radius: 50%;
-    background: var(--bg-secondary);
-    border: 2px solid color-mix(in srgb, var(--text-secondary), transparent 45%);
-    box-shadow: 0 6px 14px color-mix(in srgb, var(--shadow-color), transparent 20%);
 }
 
 .experience-role:hover {
@@ -641,8 +616,9 @@ body::before {
     border-color: transparent;
 }
 
-.experience-role:hover::before {
-    border-color: color-mix(in srgb, var(--text-primary), transparent 35%);
+.experience-role + .experience-role {
+    border-top: 1px solid color-mix(in srgb, var(--border-color), transparent 30%);
+    padding-top: 1.25rem;
 }
 
 .item-title {
@@ -940,10 +916,6 @@ body::before {
 
     .experience-group-subtitle {
         white-space: normal;
-    }
-
-    .experience-group-roles {
-        padding-left: 1.25rem;
     }
 }
 
