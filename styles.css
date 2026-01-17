@@ -583,11 +583,11 @@ body::before {
 
 .experience-group-roles .experience-item {
     margin-bottom: 0;
-    border-left: 4px solid rgba(0, 122, 255, 0.2);
+    border-left: 3px solid color-mix(in srgb, var(--text-tertiary), transparent 55%);
 }
 
 .experience-group-roles .experience-item:hover {
-    border-left-color: rgba(0, 122, 255, 0.4);
+    border-left-color: color-mix(in srgb, var(--text-secondary), transparent 45%);
 }
 
 .item-title {
