@@ -729,6 +729,10 @@ h2 > span {
   margin-top: 20px;
   max-width: 540px;
 }
+.church p a {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
 .church-mark {
   font-size: 85px;
   line-height: 1;
