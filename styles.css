@@ -298,6 +298,110 @@ html[data-evening="true"] h1 > span:after {
   padding: 17px 20px;
   text-align: center;
 }
+.portfolio-focus {
+  grid-column: 1/-1;
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 45px;
+  padding: 38px 0 0;
+}
+.focus-copy h2 {
+  font-family: var(--display);
+  font-size: clamp(32px, 4vw, 48px);
+  line-height: 1.05;
+  letter-spacing: -1.5px;
+  margin: 14px 0 18px;
+}
+.focus-copy h2 span {
+  display: inline-block;
+  margin-left: 12px;
+  color: var(--muted);
+  transform: rotate(15deg);
+}
+.focus-copy p,
+.focus-note {
+  font-size: 13px;
+  color: var(--muted);
+  max-width: 370px;
+}
+.focus-copy a {
+  display: inline-block;
+  margin-top: 15px;
+  font-size: 12px;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.focus-connections ul {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 10px;
+}
+.focus-connections li {
+  position: relative;
+  padding: 24px 16px;
+  border-radius: 30px 30px 12px 30px;
+  background: var(--violet);
+  color: var(--ink);
+}
+.focus-connections li:nth-child(2) {
+  background: var(--citrus);
+}
+.focus-connections li:nth-child(3) {
+  background: var(--coral);
+}
+.focus-connections li + li:before {
+  content: "";
+  position: absolute;
+  left: -10px;
+  top: 45%;
+  width: 10px;
+  border-top: 2px dotted var(--text);
+}
+.focus-connections .mono {
+  font-size: 9px;
+}
+.focus-connections h3 {
+  font-family: var(--display);
+  font-size: 18px;
+  line-height: 1.2;
+  margin: 14px 0 8px;
+}
+.focus-connections li p {
+  font-size: 11px;
+  line-height: 1.6;
+}
+.focus-note {
+  margin-top: 20px;
+  max-width: 500px;
+}
+@media (max-width: 760px) {
+  .portfolio-focus {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  .focus-copy p {
+    max-width: 500px;
+  }
+}
+@media (max-width: 400px) {
+  .focus-connections ul {
+    grid-template-columns: 1fr;
+  }
+  .focus-connections li {
+    padding: 18px 22px;
+  }
+  .focus-connections li + li:before {
+    left: 50%;
+    top: -10px;
+    height: 10px;
+    width: 0;
+    border-top: 0;
+    border-left: 2px dotted var(--text);
+  }
+}
 .career {
   padding-top: 100px;
 }

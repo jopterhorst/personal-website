@@ -12,7 +12,7 @@ Open http://localhost:8080/. No build step or package installation is required.
 
 ## Content and behavior
 
-- Current role: Manager, Technical Account Management at Siemens (Mendix), Benelux, since September 2026.
+- Current role: Manager, Technical Account Management at Siemens, focusing on Intelligence Center X (including Mendix), Benelux, since September 2026.
 - The preceding Technical Account Manager role ends in September 2026.
 - All seven career roles are visible, grouped by employer, above the five public projects. The supplied overlapping CLEVR dates are retained.
 - Personal copy focuses on practical business problems and automation, including at church.
