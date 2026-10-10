@@ -1,126 +1,50 @@
-# Jop ter Horst - Personal Website
+# Jop ter Horst — Personal Website
 
-A sophisticated, Apple-inspired personal portfolio website featuring dynamic status tracking, live time displays, and a comprehensive Apple Liquid Glass design system. This entire project was vibe-coded using **Claude Sonnet 4** through an iterative design process.
+A buildless personal portfolio with restrained Liquid Glass styling, expressive typography, and responsive light and dark themes.
 
-## ✨ Key Features
+## Design
 
-### 🟢 Apple-Style Live Activity
-- **Dynamic Status System**: Real-time status updates based on CET timezone
-- **Color-Coded Indicators**: Visual status dots with smooth pulse animations
-- **Smart Scheduling**: Automatically shows working hours, family time, sleeping, weekend activities
-- **Live Clock**: Real-time CET time display that updates every minute
+- Floating translucent navigation and a glass note layered over the current portrait.
+- Manrope and DM Sans paired with Instrument Serif for expressive headings.
+- Original project artwork made in CSS, three featured projects, a compact public project archive, an expandable career timeline, and seven connected expertise areas, led by business problem-solving.
+- Subtle hover effects with support for reduced motion, visible keyboard focus, and a skip link.
+- System-aware theme selection with a saved manual preference.
+- Privacy-conscious local time using `Europe/Amsterdam`, including daylight saving time. No schedules or availability are inferred.
 
-### 🎨 Apple Liquid Glass Design
-- **Glass Morphism Effects**: Sophisticated backdrop-filter blur with layered transparency
-- **Smooth Interactions**: Subtle 3D transforms on hover with reduced sensitivity
-- **Theme Toggle**: Seamless light/dark mode switching with system preference detection
-- **Particle System**: Optimized floating background animations
+## Local preview
 
-### 📱 Responsive & Accessible
-- **Mobile-First Design**: Optimized layouts for all screen sizes
-- **Performance Optimized**: Efficient animations and reduced computational overhead
-- **Clean Typography**: Apple's system fonts with proper hierarchy
-- **Smooth Animations**: Hardware-accelerated transforms and transitions
+From this folder, run:
 
-### 🏗️ Professional Portfolio Structure
-- **Experience Timeline**: Detailed work history with company information
-- **Skills Visualization**: Animated progress bars with expertise levels
-- **Project Showcase**: Featured projects with tags and external links
-- **Comprehensive Footer**: Connect links, expertise areas, and service offerings
-
-## 🛠️ Tech Stack
-
-- **HTML5**: Semantic structure with accessibility considerations
-- **CSS3**: Advanced styling with custom properties, grid layouts, and glass effects
-- **Vanilla JavaScript**: Real-time functionality, theme management, and DOM manipulation
-- **Feather Icons**: Clean, consistent iconography
-- **Apple Design Principles**: Following iOS/macOS design patterns and interactions
-
-## 🎯 Status System
-
-The live activity automatically displays different statuses based on CET time:
-
-- 🟢 **Working at Mendix** (Mon-Fri, 9 AM - 6 PM)
-- 🟠 **Family time** (Daily, 6 AM - 9 AM & Weekdays 6 PM - 10 PM)
-- ⚫ **Sleeping** (Daily, 10 PM - 6 AM)
-- 🟣 **Enjoying the weekend** (Sat-Sun, 9 AM - 10 PM)
-
-## 📁 File Structure
-
-```
-├── index.html          # Main portfolio structure with Live Activity
-├── styles.css          # Complete styling system with glass effects
-├── script.js           # Interactive functionality and animations
-├── assets/             # Profile images and resources
-└── README.md           # This documentation
+```sh
+python3 -m http.server 8080
 ```
 
-## 🚀 Getting Started
+Open [localhost:8080](http://localhost:8080). No package installation or build is needed.
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/jopterhorst/personal-website.git
-   cd personal-website
-   ```
+## Files
 
-2. **Open in browser**
-   ```bash
-   open index.html
-   ```
+- `index.html`: content, navigation, project cards, experience, and contact links.
+- `styles.css`: typography, layout, themes, project illustrations, and responsive behavior.
+- `script.js`: theme preference, Amsterdam local time, and active section navigation.
+- `assets/profile-photo.png`: current portrait supplied by Jop.
+- `favicon.svg`: site icon.
 
-3. **Customize content**
-   - Update personal information in `index.html`
-   - Modify styling variables in `styles.css`
-   - Adjust status logic in the JavaScript section
+Fonts load from Google Fonts with local system fallbacks. All other visual elements are local. Deployment remains compatible with the repository’s existing static hosting configuration; see `CLOUDFLARE_DEPLOYMENT.md`.
 
-## 🎨 Customization Guide
+The original portfolio was developed with Claude Sonnet 4. The October 2026 content update uses the owner’s supplied professional brief and verified public repositories.
 
-### Color System
-The design uses CSS custom properties for easy theming:
-```css
-:root {
-  --bg-primary: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-  --text-primary: #1d1d1f;
-  --border-color: rgba(255, 255, 255, 0.18);
-}
-```
+## Content and privacy
 
-### Status Configuration
-Modify the time-based status logic in the JavaScript:
-```javascript
-if (cetDay >= 1 && cetDay <= 5 && cetHour >= 9 && cetHour < 18) {
-    status = "Working at Mendix";
-    statusColor = "#34C759";
-}
-```
+The current role is **Manager, Technical Account Management** at Siemens Digital Industries Software (Mendix), covering the Benelux from September 2026. The previous role is displayed as **Technical Account Manager**, with the EMEA partner scope in its description, and ends in September 2026. Both roles are grouped under Siemens, with a connected role timeline. CLEVR roles remain available in a native, keyboard-accessible disclosure with their original dates.
 
-## 🌐 Browser Support
+Career and certification facts come from the owner’s October 2026 brief. Public project copy is grounded in the linked repositories. The internal GenAI tooling entry and schedule-based activity status were removed for privacy. No internal financial results or customer details are published. Content stays in semantic HTML so it is readable without JavaScript; JavaScript is reserved for theme, clock, and navigation behavior.
 
-- **Chrome/Edge**: Full support with hardware acceleration
-- **Safari**: Native backdrop-filter support with optimal performance
-- **Firefox**: Good support with minor blur effect differences
-- **Mobile**: Optimized for iOS Safari and Chrome Mobile
+Canonical, Open Graph, and Person structured metadata use `https://jopterhorst.nl/`. Existing Cloudflare static deployment files are unchanged.
 
-## ⚡ Performance Optimizations
+## Central narrative
 
-- **Reduced Particle Count**: Optimized from 12 to 6 background particles
-- **Efficient Animations**: Transform-based animations using GPU acceleration
-- **Minimal Reflows**: CSS custom properties for dynamic theming
-- **Lazy Loading**: Intersection observers for scroll-triggered animations
-- **Debounced Updates**: Time updates limited to once per minute
+The site leads with turning business problems into working solutions. The Approach section describes AI as an accelerator of an existing development and architecture background, followed by a personal perspective on the discipline needed to operate enterprise software. Projects come before the career timeline as concrete examples of that approach.
 
-## 🔧 Built With Claude Sonnet 4
+Intelligence Center X wording is based on [Siemens’ official public product page](https://www.siemens.com/en-gb/products/intelligence-center-x/) and [public announcement](https://news.siemens.com/en-us/siemens-intelligence-center-x/). Product descriptions remain distinct from Jop’s personal views; no project delivery or production experience with Graph Studio or AI Studio is claimed.
 
-This entire portfolio was developed through an iterative "vibe-coding" process using Claude Sonnet 4, featuring:
-- **Conversational Development**: Natural language requirements to production code
-- **Iterative Refinement**: Continuous improvements based on feedback
-- **Apple Design Expertise**: AI-guided implementation of Apple design patterns
-- **Performance Optimization**: Intelligent suggestions for better UX
-- **Modern Best Practices**: Current web development standards and accessibility
-
-## 📄 License
-
-MIT License - feel free to use this as inspiration for your own portfolio!
-
-
-Built with ❤️ using Apple's design principles
+The five public projects are retained: Audio Recorder, Audio Transcription, ProPresenter Import, Kefas Bridge and the CTF Archive. Digital Product Passport stays removed at the owner’s request. Project copy explains the problem, the implemented solution and its practical use.

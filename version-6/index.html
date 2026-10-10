@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#2c4037" />
+    <meta name="robots" content="noindex,follow" />
+    <meta
+      name="description"
+      content="Jop ter Horst’s notebook. Useful tools, practical problems, and a few things learned along the way."
+    />
+    <title>Jop’s notebook · Version 06</title>
+    <link rel="icon" href="favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Courier+Prime:wght@400;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to notebook</a>
+    <header class="desk-header">
+      <a href="#" class="signature"
+        >Jop ter Horst<span aria-hidden="true">.</span></a
+      ><span class="type">A PERSONAL NOTEBOOK</span
+      ><a class="header-email" href="mailto:jop@jopterhorst.nl">Say hello ↗</a>
+    </header>
+    <div class="notebook-shell">
+      <nav class="tabs" aria-label="Notebook sections">
+        <a href="#hello" class="tab-hello">Hello</a
+        ><a href="#path" class="tab-path">Along the way</a
+        ><a href="#projects" class="tab-projects">Things I’ve made</a
+        ><a href="#contact" class="tab-contact">Get in touch</a>
+      </nav>
+      <main id="main" class="notebook">
+        <div class="binding" aria-hidden="true">
+          <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i
+          ><i></i><i></i>
+        </div>
+        <section class="hello page" id="hello" aria-labelledby="hello-title">
+          <div class="page-top type">
+            <span>NO. 01 / A QUICK INTRODUCTION</span><span>J.TH.</span>
+          </div>
+          <div class="hello-layout">
+            <div class="intro">
+              <p class="hand eyebrow">A work in progress, like most things.</p>
+              <h1 id="hello-title">Notes from<br /><span>Jop.</span></h1>
+              <p>
+                I like understanding how people work, finding the repetitive
+                bits, and building something that makes them easier.
+              </p>
+              <p>
+                Sometimes that’s an application. Sometimes it’s a small
+                automation. AI gives me more ways to try things.
+              </p>
+              <a class="pencil-link" href="#projects"
+                >A few examples below <span aria-hidden="true">↘</span></a
+              >
+            </div>
+            <div class="portrait-area">
+              <figure class="photo" id="photo">
+                <div id="photo-front">
+                  <img
+                    src="../assets/profile-photo.png"
+                    width="460"
+                    height="460"
+                    alt="Jop ter Horst smiling"
+                  />
+                  <figcaption class="hand">Hi, that’s me.</figcaption>
+                </div>
+                <div id="photo-back" hidden>
+                  <span class="type">ON THE BACK</span>
+                  <p class="hand">
+                    Curious by nature.<br />Hands-on by choice.
+                  </p>
+                  <p>
+                    Based in the Netherlands.<br />Mendix Certified Expert.<br />Still
+                    figuring things out.
+                  </p>
+                  <span class="photo-back-mark hand">— Jop</span>
+                </div>
+              </figure>
+              <button
+                class="turn-photo type"
+                id="turn-photo"
+                hidden
+                aria-pressed="false"
+                aria-controls="photo-front photo-back"
+              >
+                Turn photo over ↶
+              </button>
+              <div class="sticky">
+                <p class="hand">There’s probably<br />a better way.</p>
+                <span class="type">A RECURRING THOUGHT</span>
+              </div>
+            </div>
+          </div>
+          <div class="current-note">
+            <span class="type">CURRENT CHAPTER</span>
+            <p>
+              Manager, Technical Account Management<br /><span
+                >Siemens (Mendix) · Benelux</span
+              >
+            </p>
+            <span class="hand margin-note">the day job →</span>
+          </div>
+        </section>
+        <section class="path page" id="path" aria-labelledby="path-title">
+          <div class="page-top type">
+            <span>NO. 02 / THE PATH SO FAR</span><span>2018 → NOW</span>
+          </div>
+          <div class="section-intro">
+            <h2 id="path-title">One thing led to another.</h2>
+            <p>
+              Development, consulting, architecture, and leading technical
+              people.
+            </p>
+          </div>
+          <div class="career">
+            <div class="employer">
+              <h3>Siemens <span>(Mendix)</span></h3>
+              <span class="type">2024 — NOW</span>
+            </div>
+            <div class="roles">
+              <article class="role">
+                <span class="type">SEPTEMBER 2026 — NOW · BENELUX</span>
+                <h4>Manager, Technical Account Management</h4>
+                <p>Leading and developing five Technical Account Managers.</p>
+              </article>
+              <article class="role">
+                <span class="type">SEPTEMBER 2024 — SEPTEMBER 2026 · EMEA</span>
+                <h4>Technical Account Manager</h4>
+                <p>Helping ISV partners build with Mendix.</p>
+              </article>
+            </div>
+            <details class="earlier">
+              <summary>
+                <span>CLEVR <small class="type">2020 — 2024</small></span
+                ><span class="hand expand" aria-hidden="true">+</span>
+              </summary>
+              <p>
+                Development and consulting grew into architecture, technical
+                leadership, and presales.
+              </p>
+            </details>
+            <details class="earlier">
+              <summary>
+                <span>Thinkwise <small class="type">2018 — 2020</small></span
+                ><span class="hand expand" aria-hidden="true">+</span>
+              </summary>
+              <p>
+                Presales Consultant. Demonstrations, proof-of-concepts, and
+                solution proposals.
+              </p>
+            </details>
+          </div>
+          <p class="hand career-note">
+            Still happiest close to a real problem.
+          </p>
+        </section>
+        <section
+          class="projects page"
+          id="projects"
+          aria-labelledby="projects-title"
+        >
+          <div class="page-top type">
+            <span>NO. 03 / SMALL, USEFUL THINGS</span><span>05 NOTES</span>
+          </div>
+          <div class="section-intro">
+            <h2 id="projects-title">Pocket projects.</h2>
+            <p>Mostly built because a task could be simpler.</p>
+            <span class="hand side-note">Small tools,<br />real routines.</span>
+          </div>
+          <div class="project-list">
+            <article class="project">
+              <span class="project-number type">01</span>
+              <div>
+                <span class="type project-label">MENDIX / TYPESCRIPT</span>
+                <h3>Audio Recorder</h3>
+                <p>Voice notes, recorded right inside an application.</p>
+                <div class="links">
+                  <a href="https://github.com/jopterhorst/vibingaudiorecorder"
+                    >Code ↗</a
+                  ><a
+                    href="https://marketplace.mendix.com/link/component/244303"
+                    >Marketplace ↗</a
+                  >
+                </div>
+              </div>
+              <span class="sketch sketch-wave" aria-hidden="true"
+                ><i></i><i></i><i></i><i></i><i></i><i></i><i></i
+              ></span>
+            </article>
+            <article class="project">
+              <span class="project-number type">02</span>
+              <div>
+                <span class="type project-label"
+                  >CHURCH WORKFLOW / JAVASCRIPT</span
+                >
+                <h3>ProPresenter Import</h3>
+                <p>
+                  Bilingual lyrics turned into presentation files. Less
+                  formatting by hand.
+                </p>
+                <div class="links">
+                  <a href="https://propresenter-import.pages.dev/">Try it ↗</a
+                  ><a href="https://github.com/jopterhorst/propresenter-import"
+                    >Code ↗</a
+                  >
+                </div>
+              </div>
+              <span class="sketch sketch-pages" aria-hidden="true"
+                ><i>EN</i><i>NL</i></span
+              >
+            </article>
+            <article class="project">
+              <span class="project-number type">03</span>
+              <div>
+                <span class="type project-label">MENDIX / JAVA / VOSK</span>
+                <h3>Audio Transcription</h3>
+                <p>Audio to text, processed locally.</p>
+                <div class="links">
+                  <a href="https://github.com/jopterhorst/vibetranscribe"
+                    >Code ↗</a
+                  ><a
+                    href="https://marketplace.mendix.com/link/component/244525"
+                    >Marketplace ↗</a
+                  >
+                </div>
+              </div>
+              <span class="sketch hand sketch-text" aria-hidden="true"
+                >Aa<br /><span>_______</span></span
+              >
+            </article>
+            <article class="project">
+              <span class="project-number type">04</span>
+              <div>
+                <span class="type project-label">COMMUNITY / 2025</span>
+                <h3>Mendix CTF Archive</h3>
+                <p>
+                  Challenges and workshop recordings to revisit and learn from.
+                </p>
+                <div class="links">
+                  <a href="https://mendixctf25.pages.dev/">Archive ↗</a
+                  ><a href="https://github.com/jopterhorst/mendixctf25"
+                    >Code ↗</a
+                  >
+                </div>
+              </div>
+              <span class="sketch sketch-folder" aria-hidden="true">+</span>
+            </article>
+            <article class="project">
+              <span class="project-number type">05</span>
+              <div>
+                <span class="type project-label">AUTOMATION / INTEGRATION</span>
+                <h3>Kefas Bridge</h3>
+                <p>
+                  ProPresenter slide text, automatically kept in sync with
+                  Kefas.
+                </p>
+                <div class="links">
+                  <a
+                    href="https://github.com/jopterhorst/propresenter-kefas-bridge"
+                    >Code ↗</a
+                  >
+                </div>
+              </div>
+              <span class="sketch hand sketch-sync" aria-hidden="true"
+                >□ ⇄ ○</span
+              >
+            </article>
+          </div>
+          <a
+            class="pencil-link more-projects"
+            href="https://github.com/jopterhorst"
+            >More experiments live on GitHub
+            <span aria-hidden="true">↗</span></a
+          >
+          <aside class="church-note">
+            <span class="hand church-arrow" aria-hidden="true">↳</span>
+            <div>
+              <h3 class="hand">Same mindset. Also at church.</h3>
+              <p>
+                I connect systems and automate repetitive tasks there, too. A
+                little less manual work means more time for people. That’s where
+                my ProPresenter tools come in.
+              </p>
+            </div>
+          </aside>
+        </section>
+
+        <footer class="contact page" id="contact">
+          <div class="page-top type">
+            <span>NO. 04 / LEAVE A NOTE</span><span>J.TH.</span>
+          </div>
+          <div class="contact-layout">
+            <h2>Say hello.</h2>
+            <div>
+              <a class="email" href="mailto:jop@jopterhorst.nl"
+                >jop@jopterhorst.nl ↗</a
+              >
+              <div class="social">
+                <a href="https://www.linkedin.com/in/jopterhorst/">LinkedIn ↗</a
+                ><a href="https://github.com/jopterhorst">GitHub ↗</a>
+              </div>
+            </div>
+          </div>
+          <p class="hand closing-note">That’s me, for now.</p>
+          <div class="footer-meta type">
+            <span>© <span id="year">2026</span> JOP TER HORST</span
+            ><a href="#hello">BACK TO THE FIRST PAGE ↑</a>
+          </div>
+        </footer>
+      </main>
+    </div>
+    <nav class="comparison" aria-label="Compare designs">
+      <span class="type">OTHER EDITIONS</span><a href="../">01</a
+      ><a href="../version-2/">02</a><a href="../version-3/">03</a
+      ><a href="../version-4/">04</a><a href="../version-5/">05</a
+      ><span aria-current="page">06</span>
+    </nav>
+  </body>
+</html>
