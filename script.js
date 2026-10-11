@@ -1,10 +1,7 @@
 const root = document.documentElement;
 const palette = document.getElementById("palette");
-const key = "portfolio-v8-evening";
-let evening = false;
-try {
-  evening = localStorage.getItem(key) === "true";
-} catch {}
+const devicePalette = window.matchMedia("(prefers-color-scheme: dark)");
+let evening = devicePalette.matches;
 function apply() {
   root.dataset.evening = String(evening);
   palette.setAttribute("aria-pressed", String(evening));
@@ -24,8 +21,10 @@ palette.hidden = false;
 palette.addEventListener("click", () => {
   evening = !evening;
   apply();
-  try {
-    localStorage.setItem(key, String(evening));
-  } catch {}
+});
+// Follow device changes, including after a temporary manual palette choice.
+devicePalette.addEventListener("change", (event) => {
+  evening = event.matches;
+  apply();
 });
 document.getElementById("year").textContent = new Date().getFullYear();

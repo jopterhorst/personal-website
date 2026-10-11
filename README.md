@@ -16,7 +16,7 @@ Open http://localhost:8080/. No build step or package installation is required.
 - The preceding Technical Account Manager role ends in September 2026.
 - All seven career roles are visible, grouped by employer, above the five public projects. The supplied overlapping CLEVR dates are retained.
 - Personal copy focuses on practical business problems and automation, including at church.
-- Daytime/evening palette preference uses browser storage. Links and content work without JavaScript; the palette control and current-year update are progressive enhancements.
+- The palette follows the device’s light/dark setting on load and when it changes. The palette button allows a temporary manual choice until the next device change or reload. Links and content work without JavaScript; the palette control and current-year update are progressive enhancements.
 - Responsive layouts, keyboard focus and reduced-motion support. Google Fonts have system fallbacks; the portrait and all other assets are local or native SVG/CSS.
 
 ## Files
